@@ -157,3 +157,7 @@ function calcular_caps() {
 var button1 = document.getElementById("button1");
 button1.onclick = calcular_caps;
 
+
+
+
+
