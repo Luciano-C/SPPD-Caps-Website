@@ -3,8 +3,7 @@
     display: flex;
     flex-direction: column;
     width: 94%; 
-    
-    
+   
 }
 
 .table-headers-container {
@@ -57,8 +56,7 @@
     justify-content: space-between;
     flex-grow: 1;
     font-weight: bold;
-  
- 
+    flex-shrink: 2;
 }
 
 input {
@@ -71,6 +69,7 @@ input {
     border: solid black 1px;
     width: 40%;
     min-width: 0;
+    font-size: 70%;
    
 }
 
@@ -101,22 +100,27 @@ input {
     grid-template: 1fr 4fr 0.1fr 0.5fr 1fr/3.5fr 1.5fr;
     grid-template-areas: 
     ". ."
-    "grid-table grid-img "
+    "grid-table grid-img"
     ". . "
-    "resultados . "
-    "grid-button . ";
+    "resultados ."
+    "button-container .";
+}
+
+.image-flex-container {
+    display: flex;
+    grid-area: grid-img
+    
 }
 
 .grid-img {
-    grid-area: grid-img;
-    object-fit: cover;
+    object-fit: contain;
     height: 100%;
-    width: 120%;
-    border-radius: 45%;
-    border: solid black 1px;
-    margin: 0 80px 80px 0;
+    width: 100%;
+    border-radius: 0%;
+    border: solid black 0px;
+    margin: 0 20% 20% 0;
     object-position: 80% 10%;
-    
+    flex-shrink: 0;
     
 }
 
@@ -127,18 +131,22 @@ input {
 
 
 
+.button-flex-container {
+    display: flex;
+    grid-area: button-container;
+    
+}
+
 
 .calculate-button {
     background: linear-gradient(90deg,rgba(192, 192, 192, 0.733), #808b96, #566573);
-    height: 30%;
-    width: 20%;
-    font-size: 120%;
+    height: 50%;
+    width: 35%;
     border-radius: 10px;
     color: whitesmoke;
     text-shadow: 2px 2px 0 #000;
-    padding:  0 0 0.5% 0;
-    grid-area: grid-button;
     margin-top: 3%;
+    font-size: large;  
 }
 
 
@@ -147,7 +155,7 @@ input {
     justify-content: space-evenly;
     grid-area: resultados;
     width: 30%;
-    font-size: 25px;
+    font-size: 110%;
 }
 
 .resultados-item {
@@ -163,6 +171,7 @@ input {
     color: white;
     font-weight: bold;
     font-family:'Lucida Sans';
+    padding: 5% 3% 0 3%;
 }
 
 #resultado {
