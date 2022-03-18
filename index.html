@@ -1,27 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caps Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="resize.js"></script>
-    
+
 </head>
-<body>
-   
-    <div class="grid-container">
-        <div class="table-flex-container grid-table">
+
+<body class="bg-info">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-6">
+                <img src="blanket-mrj.JPG" alt="" class="img-fluid">
+            </div>
+        </div>
+        
+        <div class="row d-flex justify-content-between mt-3">
+            <div class="col-12">
+                <table class="table bg-white">
+                    <thead class="table-dark border border-dark">
+                        <th width="40%" class="text-center">Name</th>
+                        <th width="15%" class="text-center">Rarity</th>
+                        <th width="15%" class="text-center">Level</th>
+                        <th width="15%" class="text-center">Caps</th>
+                        <th width="15%" class="text-center">Next</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-input-resultados">
+                        <tr>
+                            <th width="40%" class="border border-dark p-0 ">
+                                <input type="text" class="form-control text-left" id="name1">
+                            </th>
+                            <td width="15%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-center" maxlength="1" id="rarity1">
+                            </td>
+                            <td width="15%" class="border border-dark text-center p-0">
+                                <input type="number" class="form-control text-center" maxlength="1" min="1" max="7"
+                                    id="level1">
+                            </td>
+                            <td width="15%" class="border border-dark text-center bg-white" id="caps1">-</td>
+                            <td width="15%" class="border border-dark text-center bg-white" id="next_caps1">-</td>
+                        </tr>
+
+                        <tr>
+                            <th width="40%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-left" id="name2">
+                            </th>
+                            <td width="15%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-center" maxlength="1" id="rarity2">
+                            </td>
+                            <td width="15%" class="border border-dark text-center p-0">
+                                <input type="number" class="form-control text-center" maxlength="1" min="1" max="7"
+                                    id="level2">
+                            </td>
+                            <td width="15%" class="border border-dark text-center" id="caps2">-</td>
+                            <td width="15%" class="border border-dark text-center" id="next_caps2">-</td>
+                        </tr>
+
+                        <tr>
+                            <th width="40%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-left" id="name3">
+                            </th>
+                            <td width="15%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-center" maxlength="1" id="rarity3">
+                            </td>
+                            <td width="15%" class="border border-dark text-center p-0">
+                                <input type="number" class="form-control text-center" maxlength="1" min="1" max="7"
+                                    id="level3">
+                            </td>
+                            <td width="15%" class="border border-dark text-center" id="caps3">-</td>
+                            <td width="15%" class="border border-dark text-center" id="next_caps3">-</td>
+                        </tr>
+
+                        <tr>
+                            <th width="40%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-left" id="name4">
+                            </th>
+                            <td width="15%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-center" maxlength="1" id="rarity4">
+                            </td>
+                            <td width="15%" class="border border-dark text-center p-0">
+                                <input type="number" class="form-control text-center" maxlength="1" min="1" max="7"
+                                    id="level4">
+                            </td>
+                            <td width="15%" class="border border-dark text-center" id="caps4">-</td>
+                            <td width="15%" class="border border-dark text-center" id="next_caps4">-</td>
+                        </tr>
+
+                        <tr>
+                            <th width="40%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-left" id="name5">
+                            </th>
+                            <td width="15%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-center" maxlength="1" id="rarity5">
+                            </td>
+                            <td width="15%" class="border border-dark text-center p-0">
+                                <input type="number" class="form-control text-center" maxlength="1" min="1" max="7"
+                                    id="level5">
+                            </td>
+                            <td width="15%" class="border border-dark text-center" id="caps5">-</td>
+                            <td width="15%" class="border border-dark text-center" id="next_caps5">-</td>
+                        </tr>
+
+                        <tr>
+                            <th width="40%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-left" id="name6">
+                            </th>
+                            <td width="15%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-center" maxlength="1" id="rarity6">
+                            </td>
+                            <td width="15%" class="border border-dark text-center p-0">
+                                <input type="number" class="form-control text-center" maxlength="1" min="1" max="7"
+                                    id="level6">
+                            </td>
+                            <td width="15%" class="border border-dark text-center" id="caps6">-</td>
+                            <td width="15%" class="border border-dark text-center" id="next_caps6">-</td>
+                        </tr>
+
+                        <tr>
+                            <th width="40%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-left" id="name7">
+                            </th>
+                            <td width="15%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-center" maxlength="1" id="rarity7">
+                            </td>
+                            <td width="15%" class="border border-dark text-center p-0">
+                                <input type="number" class="form-control text-center" maxlength="1" min="1" max="7"
+                                    id="level7">
+                            </td>
+                            <td width="15%" class="border border-dark text-center" id="caps7">-</td>
+                            <td width="15%" class="border border-dark text-center" id="next_caps7">-</td>
+                        </tr>
+
+                        <tr>
+                            <th width="40%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-left" id="name8">
+                            </th>
+                            <td width="15%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-center" maxlength="1" id="rarity8">
+                            </td>
+                            <td width="15%" class="border border-dark text-center p-0">
+                                <input type="number" class="form-control text-center" maxlength="1" min="1" max="7"
+                                    id="level8">
+                            </td>
+                            <td width="15%" class="border border-dark text-center" id="caps8">-</td>
+                            <td width="15%" class="border border-dark text-center" id="next_caps8">-</td>
+                        </tr>
+
+                        <tr>
+                            <th width="40%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-left" id="name9">
+                            </th>
+                            <td width="15%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-center" maxlength="1" id="rarity9">
+                            </td>
+                            <td width="15%" class="border border-dark text-center p-0">
+                                <input type="number" class="form-control text-center" maxlength="1" min="1" max="7"
+                                    id="level9">
+                            </td>
+                            <td width="15%" class="border border-dark text-center" id="caps9">-</td>
+                            <td width="15%" class="border border-dark text-center" id="next_caps9">-</td>
+                        </tr>
+
+                        <tr>
+                            <th width="40%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-left" id="name10">
+                            </th>
+                            <td width="15%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-center" maxlength="1" id="rarity10">
+                            </td>
+                            <td width="15%" class="border border-dark text-center p-0">
+                                <input type="number" class="form-control text-center" maxlength="1" min="1" max="7"
+                                    id="level10">
+                            </td>
+                            <td width="15%" class="border border-dark text-center" id="caps10">-</td>
+                            <td width="15%" class="border border-dark text-center" id="next_caps10">-</td>
+                        </tr>
+
+                        <tr>
+                            <th width="40%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-left" id="name11">
+                            </th>
+                            <td width="15%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-center" maxlength="1" id="rarity11">
+                            </td>
+                            <td width="15%" class="border border-dark text-center p-0">
+                                <input type="number" class="form-control text-center" maxlength="1" min="1" max="7"
+                                    id="level11">
+                            </td>
+                            <td width="15%" class="border border-dark text-center" id="caps11">-</td>
+                            <td width="15%" class="border border-dark text-center" id="next_caps11">-</td>
+                        </tr>
+
+                        <tr>
+                            <th width="40%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-left" id="name12">
+                            </th>
+                            <td width="15%" class="border border-dark p-0">
+                                <input type="text" class="form-control text-center" maxlength="1" id="rarity12">
+                            </td>
+                            <td width="15%" class="border border-dark text-center p-0">
+                                <input type="number" class="form-control text-center" maxlength="1" min="1" max="7"
+                                    id="level12">
+                            </td>
+                            <td width="15%" class="border border-dark text-center" id="caps12">-</td>
+                            <td width="15%" class="border border-dark text-center" id="next_caps12">-</td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+                <div class="row">
+                    <div class="col-4 d-flex">
+                        <span class="border border-dark bg-dark text-white w-50 h5 p-1 text-center">Total</span>
+                        <span class="border border-dark w-50 h4 p-1 text-center bg-white" id="resultado">-</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-3">
+                        <button class="btn btn-primary" id="button1">Calculate</button>
+                    </div>
+                </div>
+
+            </div>
             
+          
+        </div>
+    </div>
+
+
+
+
+    <script src="decklist_caps_calculator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+<!-- <div class="grid-container">
+        <div class="table-flex-container grid-table">
+
             <div class="table-headers-container">
                 <div id="name-header">Name</div>
                 <div id="rarity-header">Rarity</div>
                 <div id="level-header">Level</div>
                 <div id="caps-header">Caps</div>
             </div>
-            
-            
+
+
             <div class="card-flex-container">
                 <input type="text" class="card-name" placeholder="Name" id="name1">
                 <input type="text" class="card-rarity" placeholder="Rarity" maxlength="1" id="rarity1">
@@ -98,7 +337,7 @@
                 <input type="number" class="card-level" placeholder="Level" maxlength="1" min="1" max="7" id="level11">
                 <div class="caps-required" id="caps11">-</div>
             </div>
-            
+
             <div class="card-flex-container">
                 <input type="text" class="card-name" placeholder="Name" id="name12">
                 <input type="text" class="card-rarity" placeholder="Rarity" maxlength="1" id="rarity12">
@@ -107,11 +346,11 @@
             </div>
         </div>
 
-        
+
         <div class="image-flex-container">
             <img src="blanket-mrj.JPG" class="grid-img">
         </div>
-        
+
 
         <div class="resultados">
             <div class="resultados-item" id="encabezado-resultado">Total</div>
@@ -122,12 +361,6 @@
             <button class="calculate-button" id="button1">Calculate</button>
         </div>
 
-        
-
-    </div>
 
 
-
-    <script src="decklist_caps_calculator.js"></script>
-</body>
-</html>
+    </div> -->
