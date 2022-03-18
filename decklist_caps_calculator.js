@@ -141,14 +141,25 @@ function calcular_caps() {
         var rarity_corrected = rarity.value.toUpperCase();
         var level = document.getElementById("level" + i);
         var caps = document.getElementById("caps" + i);
+        var next_level_caps = document.getElementById("next_caps" + i); 
         
         var card = new Card(name.value, rarity_corrected, Number(level.value));
+        let nextCardLevel = Number(level.value) <= 6 ? Number(level.value) + 1 : 7; 
+        var next_card = new Card(name.value, rarity_corrected, nextCardLevel);
 
+        // Caps cada carta
+        caps.innerHTML = card.caps_required()
+        // Caps totales
         total_caps += card.caps_required();
         var resultado = document.getElementById("resultado");
         resultado.innerHTML = total_caps;
 
-        caps.innerHTML = card.caps_required()
+        // Caps próximo nivel
+        next_level_caps.innerHTML = next_card.caps_required() - card.caps_required();
+
+
+
+        
 
     }
 } 
